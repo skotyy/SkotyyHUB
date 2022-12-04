@@ -1,0 +1,35 @@
+--SKOTYY HUB
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Skotyy HUB", "Synapse")
+
+
+--MAIN
+local Tab = Window:NewTab("Main")
+local MainSection = Tab:NewSection("Main")
+
+--Infinite Yield Script
+MainSection:NewButton("Infinite Yield", "Admin Commands", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+--Pharaon Script (Cracked Sea Hub)
+MainSection:NewButton("Pharaon Script", "Auto Level Farm (Cracked Sea Hub)", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/skotyy/Pharaon-Script-Github-/main/source'))()
+end)
+
+--Local Player
+local Tab = Window:NewTab("Player")
+local PlayerSection = Tab:NewSection("Player")
+
+PlayerSection:NewSlider("WalkSpeed", "Speed!!", 120, 16, function(s) -- 120 (MaxValue) | 16 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSection:NewSlider("JumpPower", "Jump HIGH!!", 350, 50, function(s) -- 350 (MaxValue) | 50 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+PlayerSection:NewButton("Reset WS/JP", "Resets Walkspeed/Jumppower", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
