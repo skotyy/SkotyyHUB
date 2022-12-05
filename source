@@ -12,7 +12,7 @@ MainSection:NewButton("Infinite Yield", "Admin Commands", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
---Pharaon Script (Cracked Sea Hub)
+--Pharaon Script (Cracked Sea Hub) DOESNT WORK I NEED TO MAKE THE SCRIPT GITHUB
 MainSection:NewButton("Pharaon Script", "Auto Level Farm (Cracked Sea Hub)", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/skotyy/Pharaon-Script-Github-/main/source'))()
 end)
@@ -32,4 +32,18 @@ end)
 PlayerSection:NewButton("Reset WS/JP", "Resets Walkspeed/Jumppower", function()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+local PlayerSection = Tab:NewSection("Infinite Jump")
+
+local InfiniteJumpEnabled;
+PlayerSection:NewToggle("Infinite Jump", "JUMP TO THE MOON!!.", function(State)
+    InfiniteJumpEnabled = State
+end)
+
+local Player = game:GetService("Players").LocalPlayer
+game:GetService("UserInputService").JumpRequest:Connect(function()
+     if InfiniteJumpEnabled then
+         Player.Character:WaitForChild("Humanoid"):ChangeState("Jumping")
+     end
 end)
