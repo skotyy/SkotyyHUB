@@ -14,7 +14,7 @@ end)
 
 --Pharaon Script (Cracked Sea Hub) DOESNT WORK I NEED TO MAKE THE SCRIPT GITHUB
 MainSection:NewButton("Pharaon Script", "Auto Level Farm (Cracked Sea Hub)", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/skotyy/Pharaon-Script-Github-/main/source'))()
+    loadstring(game:HttpGet("https://pharaohscript.xyz/free.lua", true))()
 end)
 
 --Local Player
@@ -25,9 +25,20 @@ PlayerSection:NewSlider("WalkSpeed", "Speed!!", 120, 16, function(s) -- 120 (Max
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
+local Jpower = 1
 PlayerSection:NewSlider("JumpPower", "Jump HIGH!!", 350, 50, function(s) -- 350 (MaxValue) | 50 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+Jpower = s
 end)
+
+function highjump()
+while task.wait() do
+if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jpower
+end
+end
+end
+
+coroutine.resume(coroutine.create(highjump))
 
 PlayerSection:NewButton("Reset WS/JP", "Resets Walkspeed/Jumppower", function()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
