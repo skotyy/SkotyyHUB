@@ -19,7 +19,7 @@ end)
 
 --XNO Hub--
 MainSection:NewButton("XN Hub (KEY: ezez083)", "Battle Royale Script (Free) kinda useless", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/XnoWs/GPO/main/xnhub"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XnoWs/gpofree/main/xnohub"))()
 end)
 
 --Local Player
