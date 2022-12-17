@@ -17,9 +17,9 @@ MainSection:NewButton("Pharaon Script", "Auto Level Farm (Cracked Sea Hub)", fun
     loadstring(game:HttpGet("https://pharaohscript.xyz/free.lua", true))()
 end)
 
---XNO Hub--
+--XN Hub--
 MainSection:NewButton("XN Hub (KEY: ezez083)", "Battle Royale Script (Free) kinda useless", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/XnoWs/gpofree/main/xnohub"))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/XnoWs/gpofree/main/Xnohub'))()
 end)
 
 --Local Player
